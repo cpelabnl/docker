@@ -1,0 +1,21 @@
+services:
+  pingvin:
+    image: stonith404/pingvin-share:v0.24.1
+    container_name: pingvin
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Amsterdam
+      - TRAEFIKURL=${TRAEFIKURL}
+    volumes:
+      - pingvin_data:/opt/app/backend/data
+      - pingvin_data:/opt/app/frontend/public/img
+    networks:
+      - cftunnel
+
+networks:
+  cftunnel:
+    name: cftunnel
+
+volumes:
+    pingvin_data:
+      name: pingvin_data

@@ -1,0 +1,25 @@
+# in the config folder make a file called authkey make. Place the Tailscale authkey there.
+services:
+  tsdproxy:
+    image: almeidapaulopt/tsdproxy:1.4.3
+    container_name: tsdproxy
+    restart: unless-stopped
+    environment:
+      TZ: Europe/Amsterdam
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - tsdproxy_data:/data
+      - ./config:/config
+    networks:
+      - tailscale
+    labels:
+      - tsdproxy.enable=true
+      - tsdproxy.name=tsdproxy
+
+volumes:
+  tsdproxy_data:
+    name: tsdproxy_data
+
+networks:
+  tailscale:  
+    name: tailscale

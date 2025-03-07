@@ -1,0 +1,15 @@
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:2024.8.3
+    container_name: cloudflared
+    restart: unless-stopped
+    environment:
+      TZ: Europe/Amsterdam # Change this to your timezone
+      TUNNEL_TOKEN: ${TOKEN}
+    networks:
+      - cftunnel
+    command: tunnel --no-autoupdate run 
+
+networks:
+  cftunnel:
+    name: cftunnel
