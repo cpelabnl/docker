@@ -1,6 +1,0 @@
-CREATE DATABASE netprobe
-CREATE USER netprobe WITH PASSWORD 'Z9uGarup'
-CREATE USER grafana WITH PASSWORD 'A2647FC995'
-GRANT WRITE ON netprobe TO netprobe
-GRANT READ ON netprobe TO grafana
-GRANT ALL PRIVILEGES TO supervisor
