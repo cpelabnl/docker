@@ -2,3 +2,4 @@
 authkey
 external.yaml
 *.bin
+*.iql
