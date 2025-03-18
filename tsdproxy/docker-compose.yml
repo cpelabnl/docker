@@ -1,7 +1,7 @@
 # in the config folder make a file called authkey make. Place the Tailscale authkey there.
 services:
   tsdproxy:
-    image: almeidapaulopt/tsdproxy:1.4.6
+    image: almeidapaulopt/tsdproxy:1.4.7
     container_name: tsdproxy
     restart: unless-stopped
     environment:
