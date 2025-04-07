@@ -3,3 +3,5 @@ authkey
 external.yaml
 *.bin
 *.iql
+*.enc
+*.sh
