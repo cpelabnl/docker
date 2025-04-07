@@ -1,6 +1,6 @@
 services:
     device-tracker:
-        image: ghcr.io/svenvg93/device-tracker:v0.0.2
+        image: ghcr.io/svenvg93/device-tracker:v0.0.3
         container_name: device-tracker
         restart: unless-stopped
         environment:
@@ -12,17 +12,14 @@ services:
           DISPLAY_TIMEZONE: Europe/Amsterdam
           DB_CONNECTION: sqlite
         networks:
-            - tailscale
+            - cftunnel
         volumes:
             - device-tracker:/config
-        labels:
-          tsdproxy.enable: true
-          tsdproxy.container_port: 80
 
 volumes:
   device-tracker:
     name: device-tracker
 
 networks:
-  tailscale:  
-    name: tailscale
+  cftunnel:  
+    name: cftunnel
