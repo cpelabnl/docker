@@ -1,6 +1,6 @@
 services:
     device-tracker:
-        image: ghcr.io/svenvg93/device-tracker:v0.1.2
+        image: ghcr.io/svenvg93/device-tracker:v0.1.3
         container_name: device-tracker
         restart: unless-stopped
         environment:
