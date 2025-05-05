@@ -1,5 +1,6 @@
 version: 2
 updates:
+  # All Docker‑Compose services
   - package-ecosystem: "docker-compose"
     directories:
       - "/cloudflared"
@@ -7,10 +8,8 @@ updates:
       - "/tsdproxy"
       - "/device-tracker"
       - "/influxdb"
+      - "/beszel"
       - "/pingvin"
       - "/grafana"
-      - "/prometheus"
-      - "/cadvisor"
     schedule:
-      interval: "monthly"
-
+      interval: "weekly"

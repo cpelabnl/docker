@@ -1,0 +1,24 @@
+services:
+  beszel:
+    image: henrygd/beszel:0.11.1
+    container_name: beszel
+    restart: unless-stopped
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    environment:
+      - TZ=Europe/Amsterdam
+    networks:
+      - tailscale
+    volumes:
+      - beszel_data:/beszel_data
+    labels:
+      tsdproxy.enable: "true"
+      tsdproxy.container_port: 8090
+
+networks:
+  tailscale:  
+    name: tailscale
+
+volumes:
+  beszel_data:
+    name: beszel_data
