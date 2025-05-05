@@ -1,47 +1,16 @@
 version: 2
 updates:
-  - package-ecosystem: "docker"
-    directory: "/cloudflared"
-    schedule:
-      interval: "monthly"
-
-  - package-ecosystem: "docker"
-    directory: "/nginx"
-    schedule:
-      interval: "monthly"
-
-  - package-ecosystem: "docker"
-    directory: "/tsdproxy"
-    schedule:
-      interval: "monthly"
-
-  - package-ecosystem: "docker"
-    directory: "/device-tracker"
-    schedule:
-      interval: "monthly"
-
-  - package-ecosystem: "docker"
-    directory: "/influxdb"
-    schedule:
-      interval: "monthly"
-
-  - package-ecosystem: "docker"
-    directory: "/pingvin"
-    schedule:
-      interval: "monthly"
-
-  - package-ecosystem: "docker"
-    directory: "/grafana"
-    schedule:
-      interval: "monthly"
-
-  - package-ecosystem: "docker"
-    directory: "/prometheus"
-    schedule:
-      interval: "monthly"
-
-  - package-ecosystem: "docker"
-    directory: "/cadvisor"
+  - package-ecosystem: "docker-compose"
+    directories:
+      - "/cloudflared"
+      - "/nginx"
+      - "/tsdproxy"
+      - "/device-tracker"
+      - "/influxdb"
+      - "/pingvin"
+      - "/grafana"
+      - "/prometheus"
+      - "/cadvisor"
     schedule:
       interval: "monthly"
 
