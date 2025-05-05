@@ -26,17 +26,22 @@ updates:
       interval: "monthly"
 
   - package-ecosystem: "docker"
-    directory: "/beszel"
-    schedule:
-      interval: "monthly"
-
-  - package-ecosystem: "docker"
     directory: "/pingvin"
     schedule:
       interval: "monthly"
 
   - package-ecosystem: "docker"
     directory: "/grafana"
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "docker"
+    directory: "/prometheus"
+    schedule:
+      interval: "monthly"
+
+  - package-ecosystem: "docker"
+    directory: "/cadvisor"
     schedule:
       interval: "monthly"
 
