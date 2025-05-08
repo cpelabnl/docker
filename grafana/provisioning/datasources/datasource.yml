@@ -12,3 +12,13 @@ datasources:
       httpMode: GET
     secureJsonData:
       password: A2647FC995
+
+  - name: prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    uid: "prometheus_ds"
+    jsonData:
+      httpMethod: GET
+      # scrapeInterval defines the minimum time between queries
+      timeInterval: "15s"

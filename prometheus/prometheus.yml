@@ -1,0 +1,33 @@
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'nodeexporter'
+    scrape_interval: 30s
+    static_configs:
+      - targets:
+          - netprobe01.tail294b9a.ts.net:9100
+          - netprobe02.tail294b9a.ts.net:9100
+          - netprobe03.tail294b9a.ts.net:9100
+          - netprobe04.tail294b9a.ts.net:9100
+          - netprobe05.tail294b9a.ts.net:9100
+          - netprobe06.tail294b9a.ts.net:9100
+          - netprobe07.tail294b9a.ts.net:9100
+          - netprobe10.tail294b9a.ts.net:9100
+          - netprobe11.tail294b9a.ts.net:9100
+          - netprobe12.tail294b9a.ts.net:9100
+          - netprobe13.tail294b9a.ts.net:9100
+          - netprobe14.tail294b9a.ts.net:9100
+          - netprobe15.tail294b9a.ts.net:9100
+          - cpe-srv.tail294b9a.ts.net:9100
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: '([^:]+):\d+'
+        target_label: instance
+        replacement: '$1'
+
+  - job_name: 'cadvisor'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['cadvisor:8080']
